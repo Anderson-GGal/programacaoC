@@ -6,6 +6,7 @@ int main(){
     char estado1, estado2, codigo1[4], codigo2[4], nomeCidade1[50], nomeCidade2[50];
     int populacao1, populacao2, pontosTuristicos1, pontosTuristicos2;
     float area1, area2, pib1, pib2;
+    float densidadePopulacional1, densidadePopulacional2, pibPerCapita1, pibPerCapita2;
 
     // solicitando os dados da primeira carta
     printf("A seguir, digite as informações da primeira carta.\n"
@@ -29,6 +30,11 @@ int main(){
 
     printf("Número de pontos turisticos da cidade: \n");
     scanf("%d", &pontosTuristicos1);
+
+    //Cálculo da densidade populacional e do PIB per capita da primeira carta
+    densidadePopulacional1 = populacao1 / area1;
+    pibPerCapita1 = pib1*1000000000 / populacao1;
+
 
     // solicitando os dados da segunda carta
 
@@ -55,6 +61,10 @@ int main(){
     printf("Número de pontos turísticos da cidade: \n");
     scanf("%d", &pontosTuristicos2);
 
+    //Cálculo da DP e PIB da segunda carta
+    densidadePopulacional2 = populacao2 / area2;
+    pibPerCapita2 = pib2*1000000000 / populacao2;
+
     //Informações da primeira carta
     printf(
         "\nCarta 1\n"
@@ -80,6 +90,16 @@ int main(){
         "Número de Pontos Turísticos: %d\n",
         estado2, codigo2, nomeCidade2, populacao2, area2, pib2, pontosTuristicos2
     );
+    //Atriuto específico (população)
+    printf("\nComparação de cartas (Atributo: População):\n");
+
+    if (populacao1 > populacao2) {
+        printf("Carta 1 (%s) venceu com %d de habitantes!\n", nomeCidade1, populacao1);
+    } else if (populacao1 < populacao2) {
+        printf("Carta 2 (%s) venceu com %d de habitantes\n", nomeCidade2, populacao2);
+    } else {
+        printf("As duas cartas possuem a mesma população de %d de habitantes\n", populacao1);
+    }
 
     return 0;
 
