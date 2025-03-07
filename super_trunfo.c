@@ -74,8 +74,11 @@ int main(){
         "População:                  %d habitantes\n"
         "Área:                       %2.f km²\n"
         "PIB:                        %2.f bilhões de reais\n"
-        "Número de Pontos Turísticos: %d\n",
-        estado1, codigo1, nomeCidade1, populacao1, area1, pib1, pontosTuristicos1
+        "Número de Pontos Turísticos: %d\n"
+        "Densidade Populacional: %2.f habitantes/km²\n"
+        "PIB per Capita: %2.f de reais por habitante\n",
+        estado1, codigo1, nomeCidade1, populacao1, area1, pib1, pontosTuristicos1, 
+        densidadePopulacional1, pibPerCapita1
     );
 
     //Informações da segunda carta
@@ -87,10 +90,13 @@ int main(){
         "População:                  %d habitantes\n"
         "Área:                       %2.f km²\n"
         "PIB:                        %2.f bilhões de reais\n"
-        "Número de Pontos Turísticos: %d\n",
-        estado2, codigo2, nomeCidade2, populacao2, area2, pib2, pontosTuristicos2
+        "Número de Pontos Turísticos: %d\n"
+        "Densidade Populacional: %2.f habitantes/km²\n"
+        "PIB per Capita: %2.f reais por habitante\n",
+        estado2, codigo2, nomeCidade2, populacao2, area2, pib2, pontosTuristicos2, 
+        densidadePopulacional2, pibPerCapita2
     );
-    //Atriuto específico (população)
+    //Atributo específico (população)
     printf("\nComparação de cartas (Atributo: População):\n");
 
     if (populacao1 > populacao2) {
